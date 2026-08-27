@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Слободна Република Крчин</title>
+
+    <link rel="icon" href="symbols/coatofarms0.png" type="image/png">
+
+    <style>
+        :root {
+            --blue: #123b70;
+            --dark-blue: #0b294d;
+            --gold: #c9a227;
+            --light-blue: #eef4fa;
+            --light-grey: #f4f5f7;
+            --grey: #6b7280;
+            --dark: #1f2933;
+            --white: #ffffff;
+            --border: #d8dde5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--light-grey);
+            color: var(--dark);
+            line-height: 1.65;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: var(--blue);
+            color: var(--white);
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .header-inner {
+            max-width: 1250px;
+            margin: auto;
+            padding: 32px 25px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .header-emblem {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.12);
+            padding: 6px;
+            border-radius: 8px;
+        }
+
+        .header-title h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+        }
+
+        .header-title p {
+            margin-top: 4px;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background: var(--dark-blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 7px rgba(0,0,0,0.15);
+        }
+
+        nav ul {
+            max-width: 1250px;
+            margin: auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 18px;
+            color: var(--white);
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.92rem;
+        }
+
+        nav a:hover {
+            background: var(--blue);
+        }
+
+        /* =========================
+           LANGUAGE SWITCHER
+        ========================= */
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 8px;
+            gap: 2px;
+        }
+
+        .language-button {
+            border: none;
+            background: transparent;
+            color: white;
+            padding: 15px 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.65;
+        }
+
+        .language-button:hover {
+            opacity: 1;
+            background: var(--blue);
+        }
+
+        .language-button.active {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(8, 32, 59, 0.73),
+                    rgba(8, 32, 59, 0.73)
+                ),
+                url("symbols/flag.png");
+
+            background-size: cover;
+            background-position: center;
+
+            min-height: 480px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 40px 25px;
+        }
+
+        .hero h2 {
+            font-size: 3.3rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 25px;
+            background: var(--gold);
+            color: #111;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .hero-button:hover {
+            background: #e0bd3b;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+        }
+
+        .section-heading h2 {
+            color: var(--blue);
+            font-size: 2rem;
+            font-weight: normal;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .section-heading p {
+            color: var(--grey);
+            margin-top: 8px;
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 27px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .card h3 {
+            color: var(--blue);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #444;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        /* =========================
+           GOVERNMENT
+        ========================= */
+
+        .government {
+            background: var(--light-grey);
+        }
+
+        /* =========================
+           NATIONAL INFORMATION
+        ========================= */
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 14px 17px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .info-table th {
+            width: 30%;
+            background: var(--blue);
+            color: white;
+            font-weight: normal;
+        }
+
+        /* =========================
+           NATIONAL SYMBOLS
+        ========================= */
+
+        .symbols {
+            background: white;
+        }
+
+        .symbols .grid {
+            align-items: stretch;
+        }
+
+        .symbol-card {
+            background: var(--light-grey);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .symbol-card > .symbol-image,
+        .symbol-card > .motto-display {
+            flex-shrink: 0;
+        }
+
+        .symbol-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background: #e9edf2;
+            padding: 25px;
+        }
+
+        .symbol-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .symbol-content h3 {
+            color: var(--blue);
+            margin-bottom: 7px;
+            height: 2.1em;
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            flex-shrink: 0;
+        }
+
+        .symbol-content p {
+            color: #444;
+        }
+
+        .file-link {
+            display: inline-block;
+            margin-top: 13px;
+            color: var(--blue);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .file-link:hover {
+            text-decoration: underline;
+        }
+
+        .motto-display {
+            width: 100%;
+            height: 220px;
+            background: #e9edf2;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .motto-text {
+            font-size: 1.45rem;
+            font-style: italic;
+            color: var(--blue);
+            line-height: 1.4;
+        }
+
+        /* =========================
+           DOCUMENTS
+        ========================= */
+
+        .documents {
+            background: var(--light-grey);
+        }
+
+        .document-list {
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        .document {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 20px 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .document:last-child {
+            border-bottom: none;
+        }
+
+        .document-info h3 {
+            color: var(--blue);
+            font-size: 1.15rem;
+        }
+
+        .document-info p {
+            color: var(--grey);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.88rem;
+            margin-top: 3px;
+        }
+
+        .document-download {
+            flex-shrink: 0;
+            background: var(--blue);
+            color: white;
+            padding: 9px 15px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .document-download:hover {
+            background: var(--dark-blue);
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-box {
+            background: var(--light-blue);
+            border-left: 5px solid var(--blue);
+            padding: 30px;
+        }
+
+        .contact-box p {
+            margin: 4px 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 45px 25px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: normal;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #cbd5e1;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-title h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+
+            .document {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            nav a {
+                padding: 11px 9px;
+                font-size: 0.8rem;
+            }
+
+            .language-switcher {
+                margin-left: 0;
+            }
+
+            .language-button {
+                padding: 11px 6px;
+                font-size: 0.75rem;
+            }
+
+            .hero {
+                min-height: 400px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+        <div class="header-inner">
+
+            <img
+                src="symbols/coatofarms.png"
+                class="header-emblem"
+                alt="Грб на Слободна Република Крчин"
+            >
+
+            <div class="header-title">
+
+                <h1
+                    data-mk="Слободна Република Крчин"
+                    data-en="Free Republic of Krchin"
+                    data-de="Freie Republik Krchin"
+                    data-fr="République libre de Krchin"
+                >
+                    Слободна Република Крчин
+                </h1>
+
+                <p
+                    data-mk="Официјален Вебсајт"
+                    data-en="Official Website"
+                    data-de="Offizielle Website"
+                    data-fr="Site officiel"
+                >
+                    Официјален Вебсајт
+                </p>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+        <ul>
+
+            <li>
+                <a
+                    href="#about"
+                    data-mk="За Нас"
+                    data-en="About"
+                    data-de="Über uns"
+                    data-fr="À propos"
+                >
+                    За Нас
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#government"
+                    data-mk="Влада"
+                    data-en="Government"
+                    data-de="Regierung"
+                    data-fr="Gouvernement"
+                >
+                    Влада
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#information"
+                    data-mk="Информации"
+                    data-en="Information"
+                    data-de="Informationen"
+                    data-fr="Informations"
+                >
+                    Информации
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#symbols"
+                    data-mk="Национални Симболи"
+                    data-en="National Symbols"
+                    data-de="Nationale Symbole"
+                    data-fr="Symboles nationaux"
+                >
+                    Национални Симболи
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#documents"
+                    data-mk="Документи"
+                    data-en="Documents"
+                    data-de="Dokumente"
+                    data-fr="Documents"
+                >
+                    Документи
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="#contact"
+                    data-mk="Контакт"
+                    data-en="Contact"
+                    data-de="Kontakt"
+                    data-fr="Contact"
+                >
+                    Контакт
+                </a>
+            </li>
+
+            <li class="language-switcher">
+
+                <button
+                    type="button"
+                    id="lang-mk"
+                    class="language-button active"
+                    onclick="setLanguage('mk')"
+                >
+                    MK
+                </button>
+
+                <button
+                    type="button"
+                    id="lang-en"
+                    class="language-button"
+                    onclick="setLanguage('en')"
+                >
+                    EN
+                </button>
+
+                <button
+                    type="button"
+                    id="lang-de"
+                    class="language-button"
+                    onclick="setLanguage('de')"
+                >
+                    DE
+                </button>
+
+                <button
+                    type="button"
+                    id="lang-fr"
+                    class="language-button"
+                    onclick="setLanguage('fr')"
+                >
+                    FR
+                </button>
+
+            </li>
+
+        </ul>
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2
+                data-mk="Добредојдовте во Слободна Република Крчин"
+                data-en="Welcome to the Free Republic of Krchin"
+                data-de="Willkommen in der Freien Republik Krchin"
+                data-fr="Bienvenue dans la République libre de Krchin"
+            >
+                Добредојдовте во Слободна Република Крчин
+            </h2>
+
+            <p
+                data-mk="Официјалниот вебсајт на Слободна Република Крчин, кој обезбедува информации за државата, нејзините институции, националните симболи и законите."
+                data-en="The official website of the Free Republic of Krchin, providing information about the country, its institutions, national symbols, and laws."
+                data-de="Die offizielle Website der Freien Republik Krchin mit Informationen über das Land, seine Institutionen, nationalen Symbole und Gesetze."
+                data-fr="Le site officiel de la République libre de Krchin, fournissant des informations sur le pays, ses institutions, ses symboles nationaux et ses lois."
+            >
+                Официјалниот вебсајт на Слободна Република Крчин, кој обезбедува информации за државата, нејзините институции, националните симболи и законите.
+            </p>
+
+            <a
+                href="#about"
+                class="hero-button"
+                data-mk="Дознајте повеќе"
+                data-en="Learn more"
+                data-de="Mehr erfahren"
+                data-fr="En savoir plus"
+            >
+                Дознајте повеќе
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about" class="about">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2
+                    data-mk="За Нас"
+                    data-en="About Us"
+                    data-de="Über uns"
+                    data-fr="À propos de nous"
+                >
+                    За Нас
+                </h2>
+
+                <p
+                    data-mk="Информации за Крчин"
+                    data-en="Information about Krchin"
+                    data-de="Informationen über Krchin"
+                    data-fr="Informations sur Krchin"
+                >
+                    Информации за Крчин
+                </p>
+
+            </div>
+
+            <p
+                data-mk="Слободна Република Крчин е микродржава воспоставена како уставна република. Нашата цел е да воспоставиме слободно и демократско општество каде правата на сите наши граѓани се еднакви, неприкосновени и гарантирани."
+                data-en="The Free Republic of Krchin is a micronation established as a constitutional republic. Our mission is to establish a free and democratic society where the rights of all our citizens are equal, inalienable and guaranteed."
+                data-de="Die Freie Republik Krchin ist ein als konstitutionelle Republik gegründeter Mikrostaat. Unser Ziel ist es, eine freie und demokratische Gesellschaft zu schaffen, in der die Rechte aller unserer Bürger gleich, unveräußerlich und garantiert sind."
+                data-fr="La République libre de Krchin est une micronation établie comme une république constitutionnelle. Notre objectif est d'établir une société libre et démocratique dans laquelle les droits de tous nos citoyens sont égaux, inaliénables et garantis."
+            >
+                Слободна Република Крчин е микродржава воспоставена како уставна република. Нашата цел е да воспоставиме слободно и демократско општество каде правата на сите наши граѓани се еднакви, неприкосновени и гарантирани.
+            </p>
+
+            <br>
+
+            <p
+                data-mk="Крчин е посветена на мирољубиви односи со другите држави, демократски избори, економски развој и одговорно раководство со нашата територија."
+                data-en="Krchin is committed to peaceful relations with other states, democratic elections, economic development, and responsible administration of our territory."
+                data-de="Krchin setzt sich für friedliche Beziehungen mit anderen Staaten, demokratische Wahlen, wirtschaftliche Entwicklung und eine verantwortungsvolle Verwaltung seines Hoheitsgebiets ein."
+                data-fr="Krchin s'engage en faveur de relations pacifiques avec les autres États, d'élections démocratiques, du développement économique et d'une administration responsable de son territoire."
+            >
+                Крчин е посветена на мирољубиви односи со другите држави, демократски избори, економски развој и одговорно раководство со нашата територија.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         GOVERNMENT
+    ========================= -->
+
+    <section id="government" class="government">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2
+                    data-mk="Влада"
+                    data-en="Government"
+                    data-de="Regierung"
+                    data-fr="Gouvernement"
+                >
+                    Влада
+                </h2>
+
+                <p
+                    data-mk="Главните институции во Крчин"
+                    data-en="The main institutions in Krchin"
+                    data-de="Die wichtigsten Institutionen in Krchin"
+                    data-fr="Les principales institutions de Krchin"
+                >
+                    Главните институции во Крчин
+                </p>
+
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3
+                        data-mk="Влада"
+                        data-en="Government"
+                        data-de="Regierung"
+                        data-fr="Gouvernement"
+                    >
+                        Влада
+                    </h3>
+
+                    <p
+                        data-mk="Владата е извршно тело избрано од Собранието кое ја води извршната власт."
+                        data-en="The Government is an executive body appointed by Parliament which leads the executive branch."
+                        data-de="Die Regierung ist ein von der Nationalversammlung ernanntes Exekutivorgan, das die Exekutive leitet."
+                        data-fr="Le Gouvernement est un organe exécutif nommé par le Parlement qui dirige le pouvoir exécutif."
+                    >
+                        Владата е извршно тело избрано од Собранието кое ја води извршната власт.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3
+                        data-mk="Премиер"
+                        data-en="Prime Minister"
+                        data-de="Premierminister"
+                        data-fr="Premier ministre"
+                    >
+                        Премиер
+                    </h3>
+
+                    <p
+                        data-mk="Премиерот е шеф на Владата, кој ја администрира државата и ја води државната политика."
+                        data-en="The Prime Minister is the head of Government, who administers the country and directs national policy."
+                        data-de="Der Premierminister ist der Regierungschef, der den Staat verwaltet und die staatliche Politik leitet."
+                        data-fr="Le Premier ministre est le chef du Gouvernement, qui administre le pays et dirige la politique nationale."
+                    >
+                        Премиерот е шеф на Владата, кој ја администрира државата и ја води државната политика.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3
+                        data-mk="Претседател"
+                        data-en="President"
+                        data-de="Präsident"
+                        data-fr="Président"
+                    >
+                        Претседател
+                    </h3>
+
+                    <p
+                        data-mk="Претседателот е шеф на државата кој ја претставува државата меѓународно."
+                        data-en="The President is the head of state who represents the country internationally."
+                        data-de="Der Präsident ist das Staatsoberhaupt und vertritt das Land auf internationaler Ebene."
+                        data-fr="Le Président est le chef de l'État qui représente le pays au niveau international."
+                    >
+                        Претседателот е шеф на државата кој ја претставува државата меѓународно.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3
+                        data-mk="Собрание"
+                        data-en="Parliament"
+                        data-de="Parlament"
+                        data-fr="Parlement"
+                    >
+                        Собрание
+                    </h3>
+
+                    <p
+                        data-mk="Собранието е демократски избрано законодавно тело кое ја води законодавната власт."
+                        data-en="Parliament is a democratically elected legislative body which leads the legislative branch."
+                        data-de="Das Parlament ist ein demokratisch gewähltes gesetzgebendes Organ, das die Legislative leitet."
+                        data-fr="Le Parlement est un organe législatif démocratiquement élu qui dirige le pouvoir législatif."
+                    >
+                        Собранието е демократски избрано законодавно тело кое ја води законодавната власт.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         NATIONAL INFORMATION
+    ========================= -->
+
+    <section id="information">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2
+                    data-mk="Државни информации"
+                    data-en="National Information"
+                    data-de="Staatsinformationen"
+                    data-fr="Informations nationales"
+                >
+                    Државни информации
+                </h2>
+
+                <p
+                    data-mk="Основни информации за Крчин"
+                    data-en="Basic information about Krchin"
+                    data-de="Grundlegende Informationen über Krchin"
+                    data-fr="Informations générales sur Krchin"
+                >
+                    Основни информации за Крчин
+                </p>
+
+            </div>
+
+
+            <table class="info-table">
+
+                <tr>
+                    <th
+                        data-mk="Официјално име"
+                        data-en="Official Name"
+                        data-de="Offizieller Name"
+                        data-fr="Nom officiel"
+                    >
+                        Официјално име
+                    </th>
+
+                    <td
+                        data-mk="Слободна Република Крчин"
+                        data-en="Free Republic of Krchin"
+                        data-de="Freie Republik Krchin"
+                        data-fr="République libre de Krchin"
+                    >
+                        Слободна Република Крчин
+                    </td>
+                </tr>
+
+
+<tr>
+                    <th
+                        data-mk="Локација"
+                        data-en="Location"
+                        data-de="Standort"
+                        data-fr="Emplacement"
+                    >
+                        Официјално име
+                    </th>
+
+                    <td>
+                        41°59'31.9"N 21°24'20.5"E
+                    </td>
+                </tr>                
+<tr>
+                    <th
+                        data-mk="Главен град"
+                        data-en="Capital"
+                        data-de="Hauptstadt"
+                        data-fr="Capitale"
+                    >
+                        Главен град
+                    </th>
+
+                    <td
+                        data-mk="Главенбург"
+                        data-en="Glavenburg"
+                        data-de="Glavenburg"
+                        data-fr="Glavenburg"
+                    >
+                        Главенбург
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th
+                        data-mk="Уредување"
+                        data-en="Government"
+                        data-de="Regierungsform"
+                        data-fr="Forme de gouvernement"
+                    >
+                        Уредување
+                    </th>
+
+                    <td
+                        data-mk="Уставна република со елементи на непосредна демократија"
+                        data-en="Constitutional republic with elements of direct democracy"
+                        data-de="Konstitutionelle Republik mit Elementen der direkten Demokratie"
+                        data-fr="République constitutionnelle avec des éléments de démocratie directe"
+                    >
+                        Уставна република со елементи на непосредна демократија
+                    </td>
+                </tr>
+
+
+<tr>
+                    <th
+                        data-mk="Претседател"
+                        data-en="President"
+                        data-de="Präsident"
+                        data-fr="Président"
+                    >
+                        Претседател
+                    </th>
+
+                    <td
+                        data-mk="Јоан Крстевски"
+                        data-en="Yoan Krstevski"
+                        data-de="Joan Krstevski"
+                        data-fr="Yoan Krstevski"
+                    >
+                        Слободна Република Крчин
+                    </td>
+                </tr>
+
+                <tr>
+                    <th
+                        data-mk="Официјален јазик"
+                        data-en="Official Language"
+                        data-de="Amtssprache"
+                        data-fr="Langue officielle"
+                    >
+                        Официјален јазик
+                    </th>
+
+                    <td
+                        data-mk="Македонски"
+                        data-en="Macedonian"
+                        data-de="Mazedonisch"
+                        data-fr="Macédonien"
+                    >
+                        Македонски
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th
+                        data-mk="Валута"
+                        data-en="Currency"
+                        data-de="Währung"
+                        data-fr="Monnaie"
+                    >
+                        Валута
+                    </th>
+
+                    <td
+                        data-mk="Осло"
+                        data-en="Oslo"
+                        data-de="Oslo"
+                        data-fr="Oslo"
+                    >
+                        Осло
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th
+                        data-mk="Државно гесло"
+                        data-en="National Motto"
+                        data-de="Staatsmotto"
+                        data-fr="Devise nationale"
+                    >
+                        Државно гесло
+                    </th>
+
+                    <td
+                        data-mk="За Државичката!"
+                        data-en="For the State!"
+                        data-de="Für den Staat!"
+                        data-fr="Pour l'État !"
+                    >
+                        За Државичката!
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th
+                        data-mk="Државна Химна"
+                        data-en="National Anthem"
+                        data-de="Nationalhymne"
+                        data-fr="Hymne national"
+                    >
+                        Државна Химна
+                    </th>
+
+                    <td
+                        data-mk="Кога се Мајската Зора Буди"
+                        data-en="When the May Dawn Arises"
+                        data-de="Wenn die Mai-Morgendämmerung erwacht"
+                        data-fr="Quand l'aube de mai se lève"
+                    >
+                        Кога се Мајската Зора Буди
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th
+                        data-mk="Државен Празник"
+                        data-en="National Day"
+                        data-de="Nationalfeiertag"
+                        data-fr="Fête nationale"
+                    >
+                        Државен Празник
+                    </th>
+
+                    <td
+                        data-mk="3-ти Октомври"
+                        data-en="3rd October"
+                        data-de="3. Oktober"
+                        data-fr="3 octobre"
+                    >
+                        3-ти Октомври
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         NATIONAL SYMBOLS
+    ========================= -->
+
+    <section id="symbols" class="symbols">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2
+                    data-mk="Национални Симболи"
+                    data-en="National Symbols"
+                    data-de="Nationale Symbole"
+                    data-fr="Symboles nationaux"
+                >
+                    Национални Симболи
+                </h2>
+
+                <p
+                    data-mk="Официјалните национални симболи на Слободна Република Крчин"
+                    data-en="The official national symbols of the Free Republic of Krchin"
+                    data-de="Die offiziellen nationalen Symbole der Freien Republik Krchin"
+                    data-fr="Les symboles nationaux officiels de la République libre de Krchin"
+                >
+                    Официјалните национални симболи на Слободна Република Крчин
+                </p>
+
+            </div>
+
+
+            <div class="grid">
+
+
+                <!-- FLAG -->
+
+                <div class="symbol-card">
+
+                    <img
+                        src="symbols/flag.png"
+                        class="symbol-image"
+                        alt="Знаме на Слободна Република Крчин"
+                    >
+
+                    <div class="symbol-content">
+
+                        <h3
+                            data-mk="Знаме"
+                            data-en="Flag"
+                            data-de="Flagge"
+                            data-fr="Drapeau"
+                        >
+                            Знаме
+                        </h3>
+
+                        <p
+                            data-mk="Државното знаме на Слободна Република Крчин, кое служи како главниот симбол на Слободна Република Крчин."
+                            data-en="The flag of the Free Republic of Krchin, which serves as the main symbol of the Free Republic of Krchin."
+                            data-de="Die Flagge der Freien Republik Krchin, die als wichtigstes Symbol der Freien Republik Krchin dient."
+                            data-fr="Le drapeau de la République libre de Krchin, qui constitue le principal symbole de la République libre de Krchin."
+                        >
+                            Државното знаме на Слободна Република Крчин, кое служи како главниот симбол на Слободна Република Крчин.
+                        </p>
+
+                        <a
+                            href="symbols/flag.png"
+                            download="Krchin-National-Flag.PNG"
+                            class="file-link"
+                            data-mk="Преземи знаме"
+                            data-en="Download flag"
+                            data-de="Flagge herunterladen"
+                            data-fr="Télécharger le drapeau"
+                        >
+                            Преземи знаме
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- COAT OF ARMS -->
+
+                <div class="symbol-card">
+
+                    <img
+                        src="symbols/coatofarms.png"
+                        alt="Грб на Слободна Република Крчин"
+                        class="symbol-image"
+                    >
+
+                    <div class="symbol-content">
+
+                        <h3
+                            data-mk="Грб"
+                            data-en="Coat of arms"
+                            data-de="Wappen"
+                            data-fr="Armoiries"
+                        >
+                            Грб
+                        </h3>
+
+                        <p
+                            data-mk="Државниот грб на Слободна Република Крчин, кој служи како секундарен симбол на Слободна Република Крчин."
+                            data-en="The national coat of arms of the Free Republic of Krchin, which serves as a secondary symbol of the Free Republic of Krchin."
+                            data-de="Das Staatswappen der Freien Republik Krchin, das als sekundäres Symbol der Freien Republik Krchin dient."
+                            data-fr="Les armoiries de la République libre de Krchin, qui constituent un symbole secondaire de la République libre de Krchin."
+                        >
+                            Државниот грб на Слободна Република Крчин, кој служи како секундарен симбол на Слободна Република Крчин.
+                        </p>
+
+                        <a
+                            href="symbols/coatofarms.png"
+                            download="Krchin-Coat-of-Arms.png"
+                            class="file-link"
+                            data-mk="Преземи грб"
+                            data-en="Download coat of arms"
+                            data-de="Wappen herunterladen"
+                            data-fr="Télécharger les armoiries"
+                        >
+                            Преземи грб
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- MOTTO I -->
+
+                <div class="symbol-card">
+
+                    <div class="motto-display">
+
+                        <p
+                            class="motto-text"
+                            data-mk="За Државичката!"
+                            data-en="For the State!"
+                            data-de="Für den Staat!"
+                            data-fr="Pour l'État !"
+                        >
+                            За Државичката!
+                        </p>
+
+                    </div>
+
+                    <div class="symbol-content">
+
+                        <h3
+                            data-mk="За Државичката!"
+                            data-en="For the State!"
+                            data-de="Für den Staat!"
+                            data-fr="Pour l'État !"
+                        >
+                            За Државичката!
+                        </h3>
+
+                        <p
+                            data-mk="Првото државно гесло на Слободна Република Крчин, кое служи како секундарен симбол на Слободна Република Крчин."
+                            data-en="The first national motto of the Free Republic of Krchin, which serves as a secondary symbol of the Free Republic of Krchin."
+                            data-de="Das erste Staatsmotto der Freien Republik Krchin, das als sekundäres Symbol der Freien Republik Krchin dient."
+                            data-fr="La première devise nationale de la République libre de Krchin, qui constitue un symbole secondaire de la République libre de Krchin."
+                        >
+                            Првото државно гесло на Слободна Република Крчин, кое служи како секундарен симбол на Слободна Република Крчин.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="file-link"
+                            onclick="copyMotto('За Државичката!'); return false;"
+                            data-mk="Копирај гесло"
+                            data-en="Copy motto"
+                            data-de="Motto kopieren"
+                            data-fr="Copier la devise"
+                        >
+                            Копирај гесло
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- MOTTO II -->
+
+                <div class="symbol-card">
+
+                    <div class="motto-display">
+
+                        <p
+                            class="motto-text"
+                            data-mk="Слобода и Живот"
+                            data-en="Freedom and Life"
+                            data-de="Freiheit und Leben"
+                            data-fr="Liberté et vie"
+                        >
+                            Слобода и Живот
+                        </p>
+
+                    </div>
+
+                    <div class="symbol-content">
+
+                        <h3
+                            data-mk="Слобода и Живот"
+                            data-en="Freedom and Life"
+                            data-de="Freiheit und Leben"
+                            data-fr="Liberté et vie"
+                        >
+                            Слобода и Живот
+                        </h3>
+
+                        <p
+                            data-mk="Второто државно гесло на Слободна Република Крчин, кое служи како секундарен симбол на Слободна Република Крчин."
+                            data-en="The second national motto of the Free Republic of Krchin, which serves as a secondary symbol of the Free Republic of Krchin."
+                            data-de="Das zweite Staatsmotto der Freien Republik Krchin, das als sekundäres Symbol der Freien Republik Krchin dient."
+                            data-fr="La deuxième devise nationale de la République libre de Krchin, qui constitue un symbole secondaire de la République libre de Krchin."
+                        >
+                            Второто државно гесло на Слободна Република Крчин, кое служи како секундарен симбол на Слободна Република Крчин.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="file-link"
+                            onclick="copyMotto('Слобода и Живот'); return false;"
+                            data-mk="Копирај гесло"
+                            data-en="Copy motto"
+                            data-de="Motto kopieren"
+                            data-fr="Copier la devise"
+                        >
+                            Копирај гесло
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- ANTHEM -->
+
+                <div class="symbol-card">
+
+                    <div
+                        class="symbol-image"
+                        style="
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:1.45rem;
+                            color:var(--blue);
+                            text-align:center;
+                        "
+                    >
+
+                        <span
+                            data-mk="Кога се Мајската Зора Буди"
+                            data-en="When the May Dawn Arises"
+                            data-de="Wenn die Mai-Morgendämmerung erwacht"
+                            data-fr="Quand l'aube de mai se lève"
+                            style="font-style:italic;"
+                        >
+                            Кога се Мајската Зора Буди
+                        </span>
+
+                    </div>
+
+                    <div class="symbol-content">
+
+                        <h3
+                            data-mk="Кога се Мајската Зора Буди"
+                            data-en="When the May Dawn Arises"
+                            data-de="Wenn die Mai-Morgendämmerung erwacht"
+                            data-fr="Quand l'aube de mai se lève"
+                        >
+                            Кога се Мајската Зора Буди
+                        </h3>
+
+                        <p
+                            data-mk="Државната химна на Слободна Република Крчин. Химната и нејзиниот официјален текст се содржани во владиниот DOCX документ."
+                            data-en="The national anthem of the Free Republic of Krchin. The anthem and its official lyrics are contained in the government DOCX document."
+                            data-de="Die Nationalhymne der Freien Republik Krchin. Die Hymne und ihr offizieller Text sind im staatlichen DOCX-Dokument enthalten."
+                            data-fr="L'hymne national de la République libre de Krchin. L'hymne et ses paroles officielles figurent dans le document DOCX gouvernemental."
+                        >
+                            Државната химна на Слободна Република Крчин. Химната и нејзиниот официјален текст се содржани во владиниот DOCX документ.
+                        </p>
+
+                        <a
+                            href="symbols/anthem.pdf"
+                            download="Krchin-National-Anthem.pdf"
+                            class="file-link"
+                            data-mk="Преземи химна"
+                            data-en="Download anthem"
+                            data-de="Hymne herunterladen"
+                            data-fr="Télécharger l'hymne"
+                        >
+                            Преземи химна
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         OFFICIAL DOCUMENTS
+    ========================= -->
+
+    <section id="documents" class="documents">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2
+                    data-mk="Официјални документи"
+                    data-en="Official Documents"
+                    data-de="Offizielle Dokumente"
+                    data-fr="Documents officiels"
+                >
+                    Официјални документи
+                </h2>
+
+                <p
+                    data-mk="Устав, закони, акти и меѓународни договори на Крчин"
+                    data-en="The Constitution, laws, acts and international treaties of Krchin"
+                    data-de="Die Verfassung, Gesetze, Akte und internationalen Verträge von Krchin"
+                    data-fr="La Constitution, les lois, actes et traités internationaux de Krchin"
+                >
+                    Устав, закони, акти и меѓународни договори на Крчин
+                </p>
+
+            </div>
+
+
+            <div class="document-list">
+
+                <!-- CONSTITUTION -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Устав на Слободна Република Крчин"
+                            data-en="Constitution of the Free Republic of Krchin"
+                            data-de="Verfassung der Freien Republik Krchin"
+                            data-fr="Constitution de la République libre de Krchin"
+                        >
+                            Устав на Слободна Република Крчин
+                        </h3>
+
+                        <p
+                            data-mk="Устав • 2026"
+                            data-en="Constitution • 2026"
+                            data-de="Verfassung • 2026"
+                            data-fr="Constitution • 2026"
+                        >
+                            Устав • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/1.pdf"
+                        download="Constitution.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- LAW 1 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Закон за Усвојување, Измена и Поништување на Закони и Акти"
+                            data-en="Law on the Adoption, Amendment and Repeal of Laws and Acts"
+                            data-de="Gesetz über die Verabschiedung, Änderung und Aufhebung von Gesetzen und Akten"
+                            data-fr="Loi relative à l'adoption, à la modification et à l'abrogation des lois et actes"
+                        >
+                            Закон за Усвојување, Измена и Поништување на Закони и Акти
+                        </h3>
+
+                        <p
+                            data-mk="Закон • 2026"
+                            data-en="Law • 2026"
+                            data-de="Gesetz • 2026"
+                            data-fr="Loi • 2026"
+                        >
+                            Закон • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/2.pdf"
+                        download="Law-on-the-Adoption,-Amendment-and-Repeal-of-Laws-and-Acts.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- LAW 2 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Закон за државјанство"
+                            data-en="Law on Citizenship"
+                            data-de="Staatsangehörigkeitsgesetz"
+                            data-fr="Loi sur la citoyenneté"
+                        >
+                            Закон за државјанство
+                        </h3>
+
+                        <p
+                            data-mk="Закон • 2026"
+                            data-en="Law • 2026"
+                            data-de="Gesetz • 2026"
+                            data-fr="Loi • 2026"
+                        >
+                            Закон • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/3.pdf"
+                        download="Law-on-Citizenship.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- LAW 3 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Кривичен Законик"
+                            data-en="Penal Code"
+                            data-de="Strafgesetzbuch"
+                            data-fr="Code pénal"
+                        >
+                            Кривичен Законик
+                        </h3>
+
+                        <p
+                            data-mk="Кривичен Законик • 2026"
+                            data-en="Penal Code • 2026"
+                            data-de="Strafgesetzbuch • 2026"
+                            data-fr="Code pénal • 2026"
+                        >
+                            Кривичен Законик • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/4.pdf"
+                        download="Penal-Code.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- LAW 4 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Закон за Сопственост"
+                            data-en="Law on Property"
+                            data-de="Eigentumsgesetz"
+                            data-fr="Loi sur la propriété"
+                        >
+                            Закон за Сопственост
+                        </h3>
+
+                        <p
+                            data-mk="Закон • 2026"
+                            data-en="Law • 2026"
+                            data-de="Gesetz • 2026"
+                            data-fr="Loi • 2026"
+                        >
+                            Закон • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/5.pdf"
+                        download="Law-on-Property.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- LAW 5 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Закон за договори"
+                            data-en="Law on Contracts"
+                            data-de="Vertragsgesetz"
+                            data-fr="Loi sur les contrats"
+                        >
+                            Закон за договори
+                        </h3>
+
+                        <p
+                            data-mk="Закон • 2026"
+                            data-en="Law • 2026"
+                            data-de="Gesetz • 2026"
+                            data-fr="Loi • 2026"
+                        >
+                            Закон • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/6.pdf"
+                        download="Law-on-Contracts.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- LAW 6 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Закон за правни лица"
+                            data-en="Law on Legal Persons"
+                            data-de="Gesetz über juristische Personen"
+                            data-fr="Loi sur les personnes morales"
+                        >
+                            Закон за правни лица
+                        </h3>
+
+                        <p
+                            data-mk="Закон • 2026"
+                            data-en="Law • 2026"
+                            data-de="Gesetz • 2026"
+                            data-fr="Loi • 2026"
+                        >
+                            Закон • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/7.pdf"
+                        download="Law-on-Legal-Persons.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- LAW 7 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Закон за национални симболи"
+                            data-en="Law on National Symbols"
+                            data-de="Gesetz über nationale Symbole"
+                            data-fr="Loi sur les symboles nationaux"
+                        >
+                            Закон за национални симболи
+                        </h3>
+
+                        <p
+                            data-mk="Закон • 2026"
+                            data-en="Law • 2026"
+                            data-de="Gesetz • 2026"
+                            data-fr="Loi • 2026"
+                        >
+                            Закон • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/8.pdf"
+                        download="Law-on-National-Symbols.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- ACT 1 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Акт за Територија на СРК"
+                            data-en="Act on Territory of the FRK"
+                            data-de="Gesetz über das Staatsgebiet der FRK"
+                            data-fr="Acte relatif au territoire de la RLK"
+                        >
+                            Акт за Територија на СРК
+                        </h3>
+
+                        <p
+                            data-mk="Акт • 2026"
+                            data-en="Act • 2026"
+                            data-de="Akte • 2026"
+                            data-fr="Acte • 2026"
+                        >
+                            Акт • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/9.pdf"
+                        download="Act-on-Territory.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- ACT 2 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Акт за Пари"
+                            data-en="Act on Money"
+                            data-de="Geldgesetz"
+                            data-fr="Acte relatif à la monnaie"
+                        >
+                            Акт за Пари
+                        </h3>
+
+                        <p
+                            data-mk="Акт • 2026"
+                            data-en="Act • 2026"
+                            data-de="Akte • 2026"
+                            data-fr="Acte • 2026"
+                        >
+                            Акт • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/10.pdf"
+                        download="Act-on-Money.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- ACT 3 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Акт за Народна Банка"
+                            data-en="Act on the National Bank"
+                            data-de="Gesetz über die Nationalbank"
+                            data-fr="Acte relatif à la Banque nationale"
+                        >
+                            Акт за Народна Банка
+                        </h3>
+
+                        <p
+                            data-mk="Акт • 2026"
+                            data-en="Act • 2026"
+                            data-de="Akte • 2026"
+                            data-fr="Acte • 2026"
+                        >
+                            Акт • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/11.pdf"
+                        download="Act-on-the-National-Bank.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- ACT 4 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Акт за Војска"
+                            data-en="Act on the Military"
+                            data-de="Militärgesetz"
+                            data-fr="Acte relatif aux forces armées"
+                        >
+                            Акт за Војска
+                        </h3>
+
+                        <p
+                            data-mk="Акт • 2026"
+                            data-en="Act • 2026"
+                            data-de="Akte • 2026"
+                            data-fr="Acte • 2026"
+                        >
+                            Акт • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/12.pdf"
+                        download="Act-on-the-Military.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- ACT 5 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Акт за Добивање Нова Територија"
+                            data-en="Act on Acquisition of New Territory"
+                            data-de="Gesetz über den Erwerb neuen Staatsgebiets"
+                            data-fr="Acte relatif à l'acquisition d'un nouveau territoire"
+                        >
+                            Акт за Добивање Нова Територија
+                        </h3>
+
+                        <p
+                            data-mk="Акт • 2026"
+                            data-en="Act • 2026"
+                            data-de="Akte • 2026"
+                            data-fr="Acte • 2026"
+                        >
+                            Акт • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/13.pdf"
+                        download="Act-on-the-Acquisition-of-New-Territory.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- ACT 6 -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Акт за Добивање Нова Територија на СРК"
+                            data-en="Act on the Acquisition of New Territory by FRK"
+                            data-de="Gesetz über den Erwerb neuen Staatsgebiets durch die FRK"
+                            data-fr="Acte relatif à l'acquisition d'un nouveau territoire par la RLK"
+                        >
+                            Акт за Добивање Нова Територија на СРК
+                        </h3>
+
+                        <p
+                            data-mk="Акт • 2026"
+                            data-en="Act • 2026"
+                            data-de="Akte • 2026"
+                            data-fr="Acte • 2026"
+                        >
+                            Акт • 2026
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/14.pdf"
+                        download="Act-on-the-Acquisition-of-New-Territory-by-FRK.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+
+                <!-- TREATY -->
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <h3
+                            data-mk="Мировен договор"
+                            data-en="Peace Treaty"
+                            data-de="Friedensvertrag"
+                            data-fr="Traité de paix"
+                        >
+                            Мировен договор
+                        </h3>
+
+                        <p
+                            data-mk="Мировен Договор • 2025"
+                            data-en="Peace Treaty • 2025"
+                            data-de="Friedensvertrag • 2025"
+                            data-fr="Traité de paix • 2025"
+                        >
+                            Мировен Договор • 2025
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="documents/15.pdf"
+                        download="Peace-Treaty.pdf"
+                        class="document-download"
+                    >
+                        PDF
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="contact">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2
+                    data-mk="Владин контакт"
+                    data-en="Government Contact"
+                    data-de="Regierungskontakt"
+                    data-fr="Contact gouvernemental"
+                >
+                    Владин контакт
+                </h2>
+
+                <p
+                    data-mk="Официјални контакт-информации на Владата на Крчин."
+                    data-en="Official contact information for the Government of Krchin."
+                    data-de="Offizielle Kontaktinformationen der Regierung von Krchin."
+                    data-fr="Coordonnées officielles du Gouvernement de Krchin."
+                >
+                    Официјални контакт-информации на Владата на Крчин.
+                </p>
+
+            </div>
+
+<strong>
+            <div class="contact-box">
+                        Е-пошта:
+                    </strong>
+
+                    slobodnarepublikakrcin@gmail.com
+
+                </p>
+
+                <p>
+
+                    <strong
+                        data-mk="Телефон:"
+                        data-en="Telephone:"
+                        data-de="Telefon:"
+                        data-fr="Téléphone :"
+                    >
+                        Телефон:
+                    </strong>
+
+                    +389 75 607 727
+
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+
+            <div>
+
+                <h3
+                    data-mk="Слободна Република Крчин"
+                    data-en="Free Republic of Krchin"
+                    data-de="Freie Republik Krchin"
+                    data-fr="République libre de Krchin"
+                >
+                    Слободна Република Крчин
+                </h3>
+
+                <p
+                    data-mk="Официјален вебсајт на Слободна Република Крчин"
+                    data-en="Official website of the Free Republic of Krchin"
+                    data-de="Offizielle Website der Freien Republik Krchin"
+                    data-fr="Site officiel de la République libre de Krchin"
+                >
+                    Официјален вебсајт на Слободна Република Крчин
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3
+                    data-mk="Влада"
+                    data-en="Government"
+                    data-de="Regierung"
+                    data-fr="Gouvernement"
+                >
+                    Влада
+                </h3>
+
+                <p>
+                    <a
+                        href="#government"
+                        data-mk="Институции"
+                        data-en="Institutions"
+                        data-de="Institutionen"
+                        data-fr="Institutions"
+                    >
+                        Институции
+                    </a>
+                </p>
+
+                <p>
+                    <a
+                        href="#information"
+                        data-mk="Информации"
+                        data-en="Information"
+                        data-de="Informationen"
+                        data-fr="Informations"
+                    >
+                        Информации
+                    </a>
+                </p>
+
+                <p>
+                    <a
+                        href="#documents"
+                        data-mk="Документи"
+                        data-en="Documents"
+                        data-de="Dokumente"
+                        data-fr="Documents"
+                    >
+                        Документи
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3
+                    data-mk="Национално"
+                    data-en="National"
+                    data-de="National"
+                    data-fr="National"
+                >
+                    Национално
+                </h3>
+
+                <p>
+                    <a
+                        href="#symbols"
+                        data-mk="Национални симболи"
+                        data-en="National Symbols"
+                        data-de="Nationale Symbole"
+                        data-fr="Symboles nationaux"
+                    >
+                        Национални симболи
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p
+                data-mk="За Државичката!"
+                data-en="For the State!"
+                data-de="Für den Staat!"
+                data-fr="Pour l'État !"
+            >
+                За Државичката!
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function setLanguage(language) {
+
+            document.documentElement.lang = language;
+
+            const translatableElements =
+                document.querySelectorAll(
+                    "[data-mk][data-en][data-de][data-fr]"
+                );
+
+            translatableElements.forEach(function(element) {
+
+                element.textContent =
+                    element.getAttribute("data-" + language);
+
+            });
+
+
+            document
+                .getElementById("lang-mk")
+                .classList.toggle(
+                    "active",
+                    language === "mk"
+                );
+
+            document
+                .getElementById("lang-en")
+                .classList.toggle(
+                    "active",
+                    language === "en"
+                );
+
+            document
+                .getElementById("lang-de")
+                .classList.toggle(
+                    "active",
+                    language === "de"
+                );
+
+            document
+                .getElementById("lang-fr")
+                .classList.toggle(
+                    "active",
+                    language === "fr"
+                );
+
+
+            if (language === "mk") {
+
+                document.title =
+                    "Слободна Република Крчин — Официјален владин портал";
+
+            } else if (language === "en") {
+
+                document.title =
+                    "Free Republic of Krchin — Official Government Portal";
+
+            } else if (language === "de") {
+
+                document.title =
+                    "Freie Republik Krchin — Offizielles Regierungsportal";
+
+            } else if (language === "fr") {
+
+                document.title =
+                    "République libre de Krchin — Portail gouvernemental officiel";
+
+            }
+
+
+            localStorage.setItem(
+                "krchin-language",
+                language
+            );
+        }
+
+
+        function copyMotto(motto) {
+
+            navigator.clipboard.writeText(motto)
+
+                .then(function() {
+
+                    if (document.documentElement.lang === "mk") {
+
+                        alert("Геслото е копирано.");
+
+                    } else if (document.documentElement.lang === "en") {
+
+                        alert("Motto copied to clipboard.");
+
+                    } else if (document.documentElement.lang === "de") {
+
+                        alert("Das Motto wurde in die Zwischenablage kopiert.");
+
+                    } else if (document.documentElement.lang === "fr") {
+
+                        alert("La devise a été copiée dans le presse-papiers.");
+
+                    }
+
+                })
+
+                .catch(function() {
+
+                    if (document.documentElement.lang === "mk") {
+
+                        alert("Геслото не можеше автоматски да се копира.");
+
+                    } else if (document.documentElement.lang === "en") {
+
+                        alert("The motto could not be copied automatically.");
+
+                    } else if (document.documentElement.lang === "de") {
+
+                        alert("Das Motto konnte nicht automatisch kopiert werden.");
+
+                    } else if (document.documentElement.lang === "fr") {
+
+                        alert("La devise n'a pas pu être copiée автоматски.");
+
+                    }
+
+                });
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                const savedLanguage =
+                    localStorage.getItem("krchin-language");
+
+                if (
+                    savedLanguage === "en" ||
+                    savedLanguage === "de" ||
+                    savedLanguage === "fr"
+                ) {
+
+                    setLanguage(savedLanguage);
+
+                } else {
+
+                    setLanguage("mk");
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
